@@ -12,12 +12,14 @@ class Category {
     var url_image: String!
     var numberOfRecipes: Int!
     var description: String!
+     var recipe: [Recipe]!
     
-    init(name:String!, url_image:String!, numberOfRecipes:Int!, description:String!){
+    init(name:String!, url_image:String!, numberOfRecipes:Int!, description:String!, recipe: [Recipe]!){
         self.name = name
         self.url_image = url_image
         self.numberOfRecipes = numberOfRecipes
         self.description = description
+        self.recipe = recipe
         
     }
 }

@@ -21,4 +21,15 @@ class Recipe{
     var time: String!
     var difficulty: String!
     var place: Place!
+    
+    init(name: String!, url_image: String!, description: String!, ingredients: [String]!, steps: String!, time: String!, difficulty: String!, place: Place!) {
+        self.name = name
+        self.url_image = url_image
+        self.description = description
+        self.ingredients = ingredients
+        self.steps = steps
+        self.time = time
+        self.difficulty = difficulty
+        self.place = place
+    }
 }
