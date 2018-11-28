@@ -11,7 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MainViewController" customModule="iCook" customModuleProvider="target">
             <connections>
-                <outlet property="tableViewRecipes" destination="1nU-Da-e27" id="BSm-7j-vXQ"/>
+                <outlet property="tableViewCategories" destination="1nU-Da-e27" id="BSm-7j-vXQ"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>

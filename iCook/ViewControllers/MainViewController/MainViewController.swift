@@ -9,7 +9,7 @@
 import UIKit
 import SDWebImage
 class MainViewController: UIViewController {
-    @IBOutlet weak var tableViewRecipes: UITableView!
+    @IBOutlet weak var tableViewCategories: UITableView!
     var arr_categories: [Category] = []
         
     override func viewDidLoad() {
@@ -19,11 +19,11 @@ class MainViewController: UIViewController {
         registercells()
     }
     private func registercells(){
-        let identifierRecipeCell = "RecipeTableViewCell"
+        let identifierRecipeCell = "CategoryTableViewCell"
         let cellNibSwitch = UINib(nibName: identifierRecipeCell, bundle: nil)
-        tableViewRecipes.register(cellNibSwitch, forCellReuseIdentifier: "RecipeTableViewCell")
+        tableViewCategories.register(cellNibSwitch, forCellReuseIdentifier: "CategoryTableViewCell")
         
-        tableViewRecipes.register(cellNibSwitch, forCellReuseIdentifier: identifierRecipeCell)
+        tableViewCategories.register(cellNibSwitch, forCellReuseIdentifier: identifierRecipeCell)
     }
 
 }
@@ -43,17 +43,18 @@ UITableViewDelegate,UITableViewDataSource{
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         
-        return 129.0
+        return 136.0
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-      /*  let post = posts[indexPath.row]
-        let comentsVC = ComentsViewController(postId: post.id)
-        navigationController?.pushViewController(comentsVC, animated: true)*/
+        let recipe = arr_categories[indexPath.row].recipe
+        let name = arr_categories[indexPath.row].name
+        let recipeVC = RecipesViewController(arr_recipes: recipe, name: name)
+        navigationController?.pushViewController(recipeVC, animated: true)
         
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-       let cell:RecipeTableViewCell = (tableView.dequeueReusableCell(withIdentifier: "RecipeTableViewCell", for: indexPath) as? RecipeTableViewCell)!
+       let cell:CategoryTableViewCell = (tableView.dequeueReusableCell(withIdentifier: "CategoryTableViewCell", for: indexPath) as? CategoryTableViewCell)!
         cell.lbl_tittle.text =  arr_categories[indexPath.row].name
         cell.lbl_description.text =  arr_categories[indexPath.row].description
         cell.lbl_numberOfRecipes.text = "Recetas: \(arr_categories[indexPath.row].numberOfRecipes!)"
