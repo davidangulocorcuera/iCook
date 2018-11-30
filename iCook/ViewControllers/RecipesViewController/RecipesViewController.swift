@@ -12,6 +12,8 @@ class RecipesViewController: UIViewController {
    @IBOutlet weak var tableViewRecipes: UITableView!
    var arr_recipes: [Recipe]!
     var name: String!
+    let searchController = UISearchController(searchResultsController: nil)
+    internal var filteredRecipes: [Recipe] = []
     
     convenience init(arr_recipes: [Recipe]!, name: String!){
         self.init()
@@ -23,8 +25,31 @@ class RecipesViewController: UIViewController {
         registercells()
         super.viewDidLoad()
         self.title = name
+        
+        searchController.searchResultsUpdater = self
+        searchController.obscuresBackgroundDuringPresentation = false
+        searchController.searchBar.placeholder = "buscar"
+        searchController.searchBar.backgroundColor = UIColor.white
+        navigationItem.searchController = searchController
+        definesPresentationContext = true
+        navigationItem.hidesSearchBarWhenScrolling = false
         // Do any additional setup after loading the view.
     }
+    internal func searchBarIsEmpty() -> Bool{
+        return searchController.searchBar.text?.isEmpty ?? true
+    }
+    
+    internal func isFiltering() -> Bool{
+        return searchController.isActive && !searchBarIsEmpty()
+    }
+    
+    internal func filterContentForSearchText(_ searchText: String){
+        filteredRecipes = arr_recipes.filter({ (recipe: Recipe ) -> Bool in
+            return (recipe.name.lowercased().contains(searchText.lowercased()))
+        })
+        tableViewRecipes.reloadData()
+    }
+    
     private func registercells(){
         let identifierRecipeCell = "RecipeCell"
         let cellNibSwitch = UINib(nibName: identifierRecipeCell, bundle: nil)
@@ -44,7 +69,9 @@ UITableViewDelegate,UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
+        if(isFiltering()){
+            return filteredRecipes.count
+        }
         return arr_recipes.count
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -60,9 +87,23 @@ UITableViewDelegate,UITableViewDataSource{
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell:RecipeCell = (tableView.dequeueReusableCell(withIdentifier: "RecipeCell", for: indexPath) as? RecipeCell)!
-        cell.lbl_tittle.text =  arr_recipes[indexPath.row].name
-        cell.recipe_image.sd_setImage(with: URL(string: arr_recipes[indexPath.row].url_image), completed: nil)
+        if(isFiltering()){
+            let recipeFiltered = filteredRecipes[indexPath.row]
+            cell.lbl_tittle.text =  recipeFiltered.name
+            cell.recipe_image.sd_setImage(with: URL(string: recipeFiltered.url_image), completed: nil)
+            
+        }
+        else{
+            cell.lbl_tittle.text =  arr_recipes[indexPath.row].name
+            cell.recipe_image.sd_setImage(with: URL(string: arr_recipes[indexPath.row].url_image), completed: nil)
+        }
+        
         return cell
     }
     
+}
+extension RecipesViewController: UISearchResultsUpdating{
+    func updateSearchResults(for searchController: UISearchController) {
+        filterContentForSearchText(searchController.searchBar.text!)
+    }
 }
