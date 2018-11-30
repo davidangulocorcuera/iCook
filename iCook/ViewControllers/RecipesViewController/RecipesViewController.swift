@@ -80,9 +80,10 @@ UITableViewDelegate,UITableViewDataSource{
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        /*  let post = posts[indexPath.row]
-         let comentsVC = ComentsViewController(postId: post.id)
-         navigationController?.pushViewController(comentsVC, animated: true)*/
+        let recipe = arr_recipes[indexPath.row]
+        
+        let recipeDetailVC = RecipeDetailViewController(recipe: recipe)
+        navigationController?.pushViewController(recipeDetailVC, animated: true)
         
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
