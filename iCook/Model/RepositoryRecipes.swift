@@ -30,7 +30,7 @@ class RepositoryRecipes{
     //----------------------------------MEAT---------------------------------------
     func getMeatRecipes()->[Recipe]{
         let madrid = Place(country: "España", city: "Madrid", lat: 20.7, lng: 19.8)
-        let meatRecipe1 = Recipe(name: "Filete con ajo", url_image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRC66hum_CGpKOg3TdTf8U0MNI_lIB-03OHD8yz_ybvKm6ITAhn", description: "Bonito filete con ajo", ingredients: ["ajo","aceite","500gr de filete"], steps: "Cortar el ajo, poner el filete en la sarten, y comertelo", time: "10 minutos", difficulty: "nivel épico", place: madrid)
+        let meatRecipe1 = Recipe(name: "Filete con ajo", url_image: "https://comecarne.org/wp-content/uploads/2018/10/Beneficios-del-consumo-de-carnes-rojas-3.jpeg", description: "Bonito filete con ajo", ingredients: ["ajo","aceite","500gr de filete"], steps: "Cortar el ajo, poner el filete en la sarten, y comertelo", time: "10 minutos", difficulty: "nivel épico", place: madrid)
         return [meatRecipe1]
     }
     

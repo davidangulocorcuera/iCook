@@ -1,17 +1,24 @@
 //
-//  RecipeTableViewCell.swift
+//  RecipeCell.swift
 //  iCook
 //
-//  Created by Biolizard on 28/11/2018.
+//  Created by Biolizard on 30/11/2018.
 //  Copyright © 2018 Biolizard. All rights reserved.
 //
 
 import UIKit
 
-class RecipeTableViewCell: UITableViewCell {
+class RecipeCell: UITableViewCell {
+ @IBOutlet weak var recipe_image:UIImageView!
+ @IBOutlet weak var containerView:UIView!
+ @IBOutlet weak var lbl_tittle:UILabel!
 
     override func awakeFromNib() {
         super.awakeFromNib()
+        recipe_image?.layer.cornerRadius = 10.0
+        recipe_image?.layer.masksToBounds = true
+        containerView?.layer.cornerRadius = 8.0
+
         // Initialization code
     }
 

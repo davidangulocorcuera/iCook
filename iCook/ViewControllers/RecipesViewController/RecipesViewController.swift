@@ -26,9 +26,9 @@ class RecipesViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     private func registercells(){
-        let identifierRecipeCell = "RecipeTableViewCell"
+        let identifierRecipeCell = "RecipeCell"
         let cellNibSwitch = UINib(nibName: identifierRecipeCell, bundle: nil)
-        tableViewRecipes.register(cellNibSwitch, forCellReuseIdentifier: "RecipeTableViewCell")
+        tableViewRecipes.register(cellNibSwitch, forCellReuseIdentifier: "RecipeCell")
         
         tableViewRecipes.register(cellNibSwitch, forCellReuseIdentifier: identifierRecipeCell)
     }
@@ -38,16 +38,14 @@ class RecipesViewController: UIViewController {
 extension RecipesViewController:
 UITableViewDelegate,UITableViewDataSource{
     
-    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 0.1
-    }
+   
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return 2
+        return arr_recipes.count
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         
@@ -61,8 +59,9 @@ UITableViewDelegate,UITableViewDataSource{
         
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell:RecipeTableViewCell = (tableView.dequeueReusableCell(withIdentifier: "RecipeTableViewCell", for: indexPath) as? RecipeTableViewCell)!
-        
+        let cell:RecipeCell = (tableView.dequeueReusableCell(withIdentifier: "RecipeCell", for: indexPath) as? RecipeCell)!
+        cell.lbl_tittle.text =  arr_recipes[indexPath.row].name
+        cell.recipe_image.sd_setImage(with: URL(string: arr_recipes[indexPath.row].url_image), completed: nil)
         return cell
     }
     

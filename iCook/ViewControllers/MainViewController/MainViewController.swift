@@ -20,9 +20,7 @@ class MainViewController: UIViewController {
     }
     private func registercells(){
         let identifierRecipeCell = "CategoryTableViewCell"
-        let cellNibSwitch = UINib(nibName: identifierRecipeCell, bundle: nil)
-        tableViewCategories.register(cellNibSwitch, forCellReuseIdentifier: "CategoryTableViewCell")
-        
+        let cellNibSwitch = UINib(nibName: identifierRecipeCell, bundle: nil)        
         tableViewCategories.register(cellNibSwitch, forCellReuseIdentifier: identifierRecipeCell)
     }
 
