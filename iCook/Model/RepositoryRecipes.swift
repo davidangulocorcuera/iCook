@@ -105,7 +105,7 @@ class RepositoryRecipes{
     //----------------------------------DESSERTS---------------------------------------
     func getDessertsRecipes()->[Recipe]{
         let cadiz = Place(country: "España", city: "Cadiz", lat: 36.53, lng: -6.29)
-        let dessertRecipe1 = Recipe(name: "Arroz con leche", url_image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRC66hum_CGpKOg3TdTf8U0MNI_lIB-03OHD8yz_ybvKm6ITAhn", description: "Asqueroso arroz con leche", ingredients: ["leche","arroz"], steps: "vertir leche sobre arroz con un poco de canela", time: "10 minutos", difficulty: "nivel legendario", place: cadiz)
+        let dessertRecipe1 = Recipe(name: "Arroz con leche", url_image: "https://recetacubana.com/wp-content/uploads/2017/09/arroz-con-leche.jpg", description: "Asqueroso arroz con leche", ingredients: ["leche","arroz"], steps: "vertir leche sobre arroz con un poco de canela", time: "10 minutos", difficulty: "nivel legendario", place: cadiz)
       
         return [dessertRecipe1]
     }
