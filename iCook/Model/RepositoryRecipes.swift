@@ -18,11 +18,11 @@ class RepositoryRecipes{
         
         let categorySalads = Category(name: "Ensaladas", url_image: "https://www.hola.com/imagenes/cocina/escuela/2015032514513/arte/alinar/ensaladas/0-313-406/aceite_ensalada_-t.jpg", numberOfRecipes: 4, description: "Recetas con ensaladas", recipe: getSaladsRecipes())
         
-        let categoryPasta = Category(name: "Pastas", url_image: "https://www.goya.com/media/4240/seasoned-pasta-salad.jpg?quality=80", numberOfRecipes: 4, description: "Recetas con pasta", recipe: getPastaRecipes())
+        let categoryPasta = Category(name: "Pastas", url_image: "https://www.goya.com/media/4240/seasoned-pasta-salad.jpg?quality=80", numberOfRecipes: 1, description: "Recetas con pasta", recipe: getPastaRecipes())
         
-        let categorySoups = Category(name: "Sopas", url_image: "https://www.cocinavital.mx/wp-content/uploads/2017/08/sopa-de-guias.jpg", numberOfRecipes: 4, description: "Recetas para sopas", recipe: getSoupsRecipes())
+        let categorySoups = Category(name: "Sopas", url_image: "https://www.cocinavital.mx/wp-content/uploads/2017/08/sopa-de-guias.jpg", numberOfRecipes: 1, description: "Recetas para sopas", recipe: getSoupsRecipes())
         
-        let categoryDessert = Category(name: "Postres", url_image: "https://assets.kraftfoods.com/recipe_images/opendeploy/150555_MXM_K62975V0_OR1_CR_640x428.jpg", numberOfRecipes: 4, description: "Recetas con postres", recipe: getDessertsRecipes())
+        let categoryDessert = Category(name: "Postres", url_image: "https://assets.kraftfoods.com/recipe_images/opendeploy/150555_MXM_K62975V0_OR1_CR_640x428.jpg", numberOfRecipes: 1, description: "Recetas con postres", recipe: getDessertsRecipes())
         
         
         return [categoryMeat,categoryFish,categoryCkicken,categoryVegetables,categorySalads,categoryPasta,categorySoups,categoryDessert]
@@ -67,62 +67,47 @@ class RepositoryRecipes{
     //----------------------------------VEGETABLES---------------------------------------
     func getVegetablesRecipes()->[Recipe]{
         let cadiz = Place(country: "España", city: "Cadiz", lat: 36.53, lng: -6.29)
-        let vegetableRecipe1 = Recipe(name: "Cazon en adobo", url_image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRC66hum_CGpKOg3TdTf8U0MNI_lIB-03OHD8yz_ybvKm6ITAhn", description: "Bonito filete con ajo", ingredients: ["ajo","aceite","500gr de filete"], steps: "Crtar el ajo, poner el filete\n en la sarten, y comertelo", time: "50 minutos", difficulty: "nivel legendario", place: cadiz)
+        let vegetableRecipe1 = Recipe(name: "Judias verdes", url_image: "https://unareceta.com/wp-content/uploads/2016/10/judias-verdes.jpg", description: "bonitas judias", ingredients: ["ajo","aceite","judias"], steps: "cocinar las judias y comertelas", time: "30 minutos", difficulty: "nivel avanzado", place: cadiz)
         let madrid = Place(country: "España", city: "Madrid", lat: 40.4, lng: -3.7)
-        let vegetableRecipe2 = Recipe(name: "Cazon en adobo", url_image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRC66hum_CGpKOg3TdTf8U0MNI_lIB-03OHD8yz_ybvKm6ITAhn", description: "Bonito filete con ajo", ingredients: ["ajo","aceite","500gr de filete"], steps: "Crtar el ajo, poner el filete en la sarten, y comertelo", time: "50 minutos", difficulty: "nivel legendario", place: madrid)
+        let vegetableRecipe2 = Recipe(name: "Alcachofas con lacon", url_image: "https://lh3.googleusercontent.com/-shSwbuakjZM/Vy3ldEIA7MI/AAAAAAAAIps/c33862d7F3I/s640/blogger-image-577527329.jpg", description: "bonitas alcachofas", ingredients: ["alcachofas","lacon"], steps: "cocinar las alcachofas y vertirle lacon por encima", time: "20 minutos", difficulty: "nivel legendario", place: madrid)
         let leon = Place(country: "España", city: "Leon", lat: 42.5, lng: -5.1)
-        let vegetableRecipe3 = Recipe(name: "Cazon en adobo", url_image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRC66hum_CGpKOg3TdTf8U0MNI_lIB-03OHD8yz_ybvKm6ITAhn", description: "Bonito filete con ajo", ingredients: ["ajo","aceite","500gr de filete"], steps: "Crtar el ajo, poner el filete en la sarten, y comertelo", time: "50 minutos", difficulty: "nivel legendario", place: leon)
+        let vegetableRecipe3 = Recipe(name: "Menestra de verduras", url_image: "https://unareceta.com/wp-content/uploads/2016/10/menestra-de-verduras.jpg", description: "Bonita menestra", ingredients: ["verduras","verduras","guisantes"], steps: "Mezclar todas las verduras y comertelas", time: "30 minutos", difficulty: "nivel avanzado", place: leon)
         let segovia = Place(country: "España", city: "Segovia", lat: 40.9, lng: -4.1)
-        let vegetableRecipe4 = Recipe(name: "Cazon en adobo", url_image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRC66hum_CGpKOg3TdTf8U0MNI_lIB-03OHD8yz_ybvKm6ITAhn", description: "Bonito filete con ajo", ingredients: ["ajo","aceite","500gr de filete"], steps: "Crtar el ajo, poner el filete en la sarten, y comertelo", time: "50 minutos", difficulty: "nivel legendario", place: segovia)
+        let vegetableRecipe4 = Recipe(name: "Guisantes con jamon", url_image: "https://www.bezzia.com/wp-content/uploads/2017/01/guisantes_jamon.jpg", description: "Bonito filete con ajo", ingredients: ["guisantes","jamon"], steps: "cocinar los guisantes y vertirles jamon por encima", time: "10 minutos", difficulty: "nivel legendario", place: segovia)
         return [vegetableRecipe1,vegetableRecipe2,vegetableRecipe3,vegetableRecipe4]
     }
     //----------------------------------SALADS---------------------------------------
     func getSaladsRecipes()->[Recipe]{
         let cadiz = Place(country: "España", city: "Cadiz", lat: 36.53, lng: -6.29)
-        let saladRecipe1 = Recipe(name: "Cazon en adobo", url_image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRC66hum_CGpKOg3TdTf8U0MNI_lIB-03OHD8yz_ybvKm6ITAhn", description: "Bonito filete con ajo", ingredients: ["ajo","aceite","500gr de filete"], steps: "Crtar el ajo, poner el filete en la sarten, y comertelo", time: "50 minutos", difficulty: "nivel legendario", place: cadiz)
+        let saladRecipe1 = Recipe(name: "Ensalada de lechuga", url_image: "https://recetasvanesa.files.wordpress.com/2013/03/img_3324.jpg", description: "Bonita ensalada", ingredients: ["lechuga"], steps: "coger la lechuga de la huerta y saltearla", time: "5 minutos", difficulty: "nivel legendario", place: cadiz)
         let madrid = Place(country: "España", city: "Madrid", lat: 40.4, lng: -3.7)
-        let saladRecipe2 = Recipe(name: "Cazon en adobo", url_image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRC66hum_CGpKOg3TdTf8U0MNI_lIB-03OHD8yz_ybvKm6ITAhn", description: "Bonito filete con ajo", ingredients: ["ajo","aceite","500gr de filete"], steps: "Crtar el ajo, poner el filete en la sarten, y comertelo", time: "50 minutos", difficulty: "nivel legendario", place: madrid)
+        let saladRecipe2 = Recipe(name: "Ensalada de tomate", url_image: "https://www.hogarmania.com/archivos/201705/ensalada-tomate-xl-848x477x80xX-1.jpg", description: "Bonitos tomates", ingredients: ["lechga","tomate"], steps: "Mezclar el tomate con la lechuga de huerta", time: "10 minutos", difficulty: "nivel normal", place: madrid)
         let leon = Place(country: "España", city: "Leon", lat: 42.5, lng: -5.1)
-        let saladRecipe3 = Recipe(name: "Cazon en adobo", url_image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRC66hum_CGpKOg3TdTf8U0MNI_lIB-03OHD8yz_ybvKm6ITAhn", description: "Bonito filete con ajo", ingredients: ["ajo","aceite","500gr de filete"], steps: "Crtar el ajo, poner el filete en la sarten, y comertelo", time: "50 minutos", difficulty: "nivel legendario", place: leon)
+        let saladRecipe3 = Recipe(name: "Ensalada con cebolla", url_image: "https://assets.kraftfoods.com/recipe_images/opendeploy/75323_640x428.jpg", description: "Bonitas cebollas", ingredients: ["cebolla","lechuga"], steps: "mezclar la lechuga con la cebolla", time: "90 minutos", difficulty: "nivel legendario", place: leon)
         let segovia = Place(country: "España", city: "Segovia", lat: 40.9, lng: -4.1)
-        let saladRecipe4 = Recipe(name: "Cazon en adobo", url_image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRC66hum_CGpKOg3TdTf8U0MNI_lIB-03OHD8yz_ybvKm6ITAhn", description: "Bonito filete con ajo", ingredients: ["ajo","aceite","500gr de filete"], steps: "Crtar el ajo, poner el filete en la sarten, y comertelo", time: "50 minutos", difficulty: "nivel legendario", place: segovia)
+        let saladRecipe4 = Recipe(name: "Ensalada completa", url_image: "https://www.hogarmania.com/archivos/201210/413.-ensalada-completa-668x400x80xX.jpg", description: "Bonita ensalada", ingredients: ["lechuga","cebolla"], steps: "Mezclar la lechuga con la cebolla", time: "50 minutos", difficulty: "nivel legendario", place: segovia)
         return [saladRecipe1,saladRecipe2,saladRecipe3,saladRecipe4]
     }
     //----------------------------------PASTA---------------------------------------
     func getPastaRecipes()->[Recipe]{
         let cadiz = Place(country: "España", city: "Cadiz", lat: 36.53, lng: -6.29)
-        let pastaRecipe1 = Recipe(name: "Cazon en adobo", url_image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRC66hum_CGpKOg3TdTf8U0MNI_lIB-03OHD8yz_ybvKm6ITAhn", description: "Bonito filete con ajo", ingredients: ["ajo","aceite","500gr de filete"], steps: "Crtar el ajo, poner el filete en la sarten, y comertelo", time: "50 minutos", difficulty: "nivel legendario", place: cadiz)
-        let madrid = Place(country: "España", city: "Madrid", lat: 40.4, lng: -3.7)
-        let pastaRecipe2 = Recipe(name: "Cazon en adobo", url_image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRC66hum_CGpKOg3TdTf8U0MNI_lIB-03OHD8yz_ybvKm6ITAhn", description: "Bonito filete con ajo", ingredients: ["ajo","aceite","500gr de filete"], steps: "Crtar el ajo, poner el filete en la sarten, y comertelo", time: "50 minutos", difficulty: "nivel legendario", place: madrid)
-        let leon = Place(country: "España", city: "Leon", lat: 42.5, lng: -5.1)
-        let pastaRecipe3 = Recipe(name: "Cazon en adobo", url_image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRC66hum_CGpKOg3TdTf8U0MNI_lIB-03OHD8yz_ybvKm6ITAhn", description: "Bonito filete con ajo", ingredients: ["ajo","aceite","500gr de filete"], steps: "Crtar el ajo, poner el filete en la sarten, y comertelo", time: "50 minutos", difficulty: "nivel legendario", place: leon)
-        let segovia = Place(country: "España", city: "Segovia", lat: 40.9, lng: -4.1)
-        let pastaRecipe4 = Recipe(name: "Cazon en adobo", url_image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRC66hum_CGpKOg3TdTf8U0MNI_lIB-03OHD8yz_ybvKm6ITAhn", description: "Bonito filete con ajo", ingredients: ["ajo","aceite","500gr de filete"], steps: "Crtar el ajo, poner el filete en la sarten, y comertelo", time: "50 minutos", difficulty: "nivel legendario", place: segovia)
-        return [pastaRecipe1,pastaRecipe2,pastaRecipe3,pastaRecipe4]
+        let pastaRecipe1 = Recipe(name: "Putanesca", url_image: "https://okdiario.com/img/recetas/2016/10/27/salsa-putanesca.jpg", description: "Bonita salsa para pastas", ingredients: ["cosas","tomate","orégano"], steps: "Cocinar la salsa y vertirla en la pasta", time: "50 minutos", difficulty: "nivel legendario", place: cadiz)
+        
+        return [pastaRecipe1]
     }
     //----------------------------------SOUPS---------------------------------------
     func getSoupsRecipes()->[Recipe]{
         let cadiz = Place(country: "España", city: "Cadiz", lat: 36.53, lng: -6.29)
-        let soupRecipe1 = Recipe(name: "Cazon en adobo", url_image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRC66hum_CGpKOg3TdTf8U0MNI_lIB-03OHD8yz_ybvKm6ITAhn", description: "Bonito filete con ajo", ingredients: ["ajo","aceite","500gr de filete"], steps: "Crtar el ajo, poner el filete en la sarten, y comertelo", time: "50 minutos", difficulty: "nivel legendario", place: cadiz)
-        let madrid = Place(country: "España", city: "Madrid", lat: 40.4, lng: -3.7)
-        let soupRecipe2 = Recipe(name: "Cazon en adobo", url_image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRC66hum_CGpKOg3TdTf8U0MNI_lIB-03OHD8yz_ybvKm6ITAhn", description: "Bonito filete con ajo", ingredients: ["ajo","aceite","500gr de filete"], steps: "Crtar el ajo, poner el filete en la sarten, y comertelo", time: "50 minutos", difficulty: "nivel legendario", place: madrid)
-        let leon = Place(country: "España", city: "Leon", lat: 42.5, lng: -5.1)
-        let soupRecipe3 = Recipe(name: "Cazon en adobo", url_image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRC66hum_CGpKOg3TdTf8U0MNI_lIB-03OHD8yz_ybvKm6ITAhn", description: "Bonito filete con ajo", ingredients: ["ajo","aceite","500gr de filete"], steps: "Crtar el ajo, poner el filete en la sarten, y comertelo", time: "50 minutos", difficulty: "nivel legendario", place: leon)
-        let segovia = Place(country: "España", city: "Segovia", lat: 40.9, lng: -4.1)
-        let soupRecipe4 = Recipe(name: "Cazon en adobo", url_image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRC66hum_CGpKOg3TdTf8U0MNI_lIB-03OHD8yz_ybvKm6ITAhn", description: "Bonito filete con ajo", ingredients: ["ajo","aceite","500gr de filete"], steps: "Crtar el ajo, poner el filete en la sarten, y comertelo", time: "50 minutos", difficulty: "nivel legendario", place: segovia)
-        return [soupRecipe1,soupRecipe2,soupRecipe3,soupRecipe4]
+        let soupRecipe1 = Recipe(name: "Caldo Gallego", url_image: "https://www.recetashuga.es/wp-content/uploads/2013/12/CIMG4159_portada-1024x768.jpg", description: "Bonito caldo", ingredients: ["verduras","agua"], steps: "Preparar el caldo y calentarlo", time: "580 minutos", difficulty: "nivel legendario", place: cadiz)
+    
+        return [soupRecipe1]
     }
     //----------------------------------DESSERTS---------------------------------------
     func getDessertsRecipes()->[Recipe]{
         let cadiz = Place(country: "España", city: "Cadiz", lat: 36.53, lng: -6.29)
-        let dessertRecipe1 = Recipe(name: "Cazon en adobo", url_image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRC66hum_CGpKOg3TdTf8U0MNI_lIB-03OHD8yz_ybvKm6ITAhn", description: "Bonito filete con ajo", ingredients: ["ajo","aceite","500gr de filete"], steps: "Crtar el ajo, poner el filete en la sarten, y comertelo", time: "50 minutos", difficulty: "nivel legendario", place: cadiz)
-        let madrid = Place(country: "España", city: "Madrid", lat: 40.4, lng: -3.7)
-        let dessertRecipe2 = Recipe(name: "Cazon en adobo", url_image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRC66hum_CGpKOg3TdTf8U0MNI_lIB-03OHD8yz_ybvKm6ITAhn", description: "Bonito filete con ajo", ingredients: ["ajo","aceite","500gr de filete"], steps: "Crtar el ajo, poner el filete en la sarten, y comertelo", time: "50 minutos", difficulty: "nivel legendario", place: madrid)
-        let leon = Place(country: "España", city: "Leon", lat: 42.5, lng: -5.1)
-        let dessertRecipe3 = Recipe(name: "Cazon en adobo", url_image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRC66hum_CGpKOg3TdTf8U0MNI_lIB-03OHD8yz_ybvKm6ITAhn", description: "Bonito filete con ajo", ingredients: ["ajo","aceite","500gr de filete"], steps: "Crtar el ajo, poner el filete en la sarten, y comertelo", time: "50 minutos", difficulty: "nivel legendario", place: leon)
-        let segovia = Place(country: "España", city: "Segovia", lat: 40.9, lng: -4.1)
-        let dessertRecipe4 = Recipe(name: "Cazon en adobo", url_image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRC66hum_CGpKOg3TdTf8U0MNI_lIB-03OHD8yz_ybvKm6ITAhn", description: "Bonito filete con ajo", ingredients: ["ajo","aceite","500gr de filete"], steps: "Crtar el ajo, poner el filete en la sarten, y comertelo", time: "50 minutos", difficulty: "nivel legendario", place: segovia)
-        return [dessertRecipe1,dessertRecipe2,dessertRecipe3,dessertRecipe4]
+        let dessertRecipe1 = Recipe(name: "Arroz con leche", url_image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRC66hum_CGpKOg3TdTf8U0MNI_lIB-03OHD8yz_ybvKm6ITAhn", description: "Asqueroso arroz con leche", ingredients: ["leche","arroz"], steps: "vertir leche sobre arroz con un poco de canela", time: "10 minutos", difficulty: "nivel legendario", place: cadiz)
+      
+        return [dessertRecipe1]
     }
     
 }

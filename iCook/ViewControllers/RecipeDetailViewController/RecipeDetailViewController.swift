@@ -52,9 +52,8 @@ class RecipeDetailViewController: UIViewController {
     }
     func setLabels() {
         lbl_difficulty.text = "Dificultad: " + recipe.difficulty
-        for ingredient in recipe.ingredients {
-           ingredients = ingredient + " "
-        }
+       
+        lbl_ingredients.text  = "Ingredientes: " + recipe.ingredients.joined(separator: ",")
         lbl_description.text = recipe.description
         lbl_steps.text = "Pasos a seguir: " + recipe.steps
         lbl_place.text = "Típico en: " + recipe.place.city
@@ -68,7 +67,7 @@ class RecipeDetailViewController: UIViewController {
         recipe_image.layer.borderWidth = 2
         recipe_image.layer.borderColor = UIColor(red:222/255, green:225/255, blue:227/255, alpha: 1).cgColor
     }
-
+    
 
     /*
     // MARK: - Navigation
